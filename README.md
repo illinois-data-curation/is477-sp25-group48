@@ -28,9 +28,13 @@ I think in potential future work, if I were to explore these research questions 
 
 # Reproducing: Sequence of steps that are required for someone else to reproduce my results
 1.Downloading all necessary imports that are need to complete the project through using a requirements.txt
+
 2.Importing the Cost of International Education and World Happiness Index datasets from kaggle
+
 3.Cleaning the data set of any null values, removing white spaces, and harmonizing some column names to make naming conventions the same for countries who have alternative ways to identify itself
+
 4.Integrate the two datasets together to keep only necessary columns for analysis such as the country, Average_Tuition,H appiness_Score, and GDP_per_capita; Country serves as the primary key in the merged.csv
+
 5.Conduct the correlation analysis that produces a correlation coefficient for the two hypothesis while also creating graphs that visualize the results of the analysis.
 
 # References: Formatted citations for any datasets used in your project
