@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+analyze            1
+clean              1
+integration        1
+total              4
+
+Select jobs to execute...
+
+[Fri May  9 16:46:18 2025]
+rule clean:
+    input: datasets/cost-of-international-education/International_Education_Costs.csv, datasets/world-happiness/2019.csv
+    output: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv
+    jobid: 3
+    reason: Missing output files: cleaned_data/cleaned_2019_happiness.csv, cleaned_data/cleaned_International_Education_Costs.csv
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+Waiting at most 10 seconds for missing files.
+MissingOutputException in rule clean in file C:\Users\ethan\OneDrive\Senior Year SEM 1\IS 477\is477-sp25-group48\Snakefile, line 12:
+Job 3  completed successfully, but some output files are missing. Missing files after 10 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+cleaned_data/cleaned_International_Education_Costs.csv
+cleaned_data/cleaned_2019_happiness.csv
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

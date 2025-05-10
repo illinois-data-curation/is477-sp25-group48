@@ -1,0 +1,64 @@
+Building DAG of jobs...
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+analyze            1
+clean              1
+integration        1
+total              4
+
+Select jobs to execute...
+
+[Fri May  9 16:47:49 2025]
+rule clean:
+    input: datasets/cost-of-international-education/International_Education_Costs.csv, datasets/world-happiness/2019.csv
+    output: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv
+    jobid: 3
+    reason: Missing output files: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+[Fri May  9 16:47:50 2025]
+Finished job 3.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Fri May  9 16:47:50 2025]
+rule integration:
+    input: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv
+    output: datasets/merged.csv
+    jobid: 2
+    reason: Missing output files: datasets/merged.csv; Input files updated by another job: cleaned_data/cleaned_2019_happiness.csv, cleaned_data/cleaned_International_Education_Costs.csv
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+[Fri May  9 16:47:52 2025]
+Finished job 2.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Fri May  9 16:47:52 2025]
+rule analyze:
+    input: datasets/merged.csv
+    output: output/tuition_vs_happiness.png, output/affordability_vs_happiness.png
+    jobid: 1
+    reason: Missing output files: output/tuition_vs_happiness.png, output/affordability_vs_happiness.png; Input files updated by another job: datasets/merged.csv
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+[Fri May  9 16:47:54 2025]
+Finished job 1.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Fri May  9 16:47:54 2025]
+localrule all:
+    input: output/tuition_vs_happiness.png, output/affordability_vs_happiness.png
+    jobid: 0
+    reason: Input files updated by another job: output/tuition_vs_happiness.png, output/affordability_vs_happiness.png
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+[Fri May  9 16:47:54 2025]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake\log\2025-05-09T164749.347711.snakemake.log

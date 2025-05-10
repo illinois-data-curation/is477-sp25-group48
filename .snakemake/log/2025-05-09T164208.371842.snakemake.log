@@ -1,0 +1,48 @@
+Building DAG of jobs...
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+analyze              1
+clean                1
+download_data        1
+integration          1
+total                5
+
+Select jobs to execute...
+
+[Fri May  9 16:42:08 2025]
+rule download_data:
+    output: datasets/cost-of-international-education/International_Education_Costs.csv, datasets/world-happiness/2019.csv
+    jobid: 4
+    reason: Missing output files: datasets/world-happiness/2019.csv, datasets/cost-of-international-education/International_Education_Costs.csv
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+[Fri May  9 16:42:10 2025]
+Finished job 4.
+1 of 5 steps (20%) done
+Select jobs to execute...
+
+[Fri May  9 16:42:10 2025]
+rule clean:
+    input: datasets/cost-of-international-education/International_Education_Costs.csv, datasets/world-happiness/2019.csv
+    output: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv
+    jobid: 3
+    reason: Missing output files: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv; Input files updated by another job: datasets/world-happiness/2019.csv, datasets/cost-of-international-education/International_Education_Costs.csv
+    resources: tmpdir=C:\Users\ethan\AppData\Local\Temp
+
+[Fri May  9 16:42:12 2025]
+Error in rule clean:
+    jobid: 3
+    input: datasets/cost-of-international-education/International_Education_Costs.csv, datasets/world-happiness/2019.csv
+    output: cleaned_data/cleaned_International_Education_Costs.csv, cleaned_data/cleaned_2019_happiness.csv
+
+RuleException:
+CalledProcessError in file C:\Users\ethan\OneDrive\Senior Year SEM 1\IS 477\is477-sp25-group48\Snakefile, line 20:
+Command 'C:/Users/ethan/miniconda3/python.exe "C:\Users\ethan\OneDrive\Senior Year SEM 1\IS 477\is477-sp25-group48\.snakemake\scripts\tmp91g19scd.clean.py"' returned non-zero exit status 1.
+  File "C:\Users\ethan\OneDrive\Senior Year SEM 1\IS 477\is477-sp25-group48\Snakefile", line 20, in __rule_clean
+  File "C:\Users\ethan\miniconda3\lib\concurrent\futures\thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
