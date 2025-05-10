@@ -22,3 +22,6 @@ https://creativecommons.org/licenses/by/4.0/
 
 # Software
 Pandas, Matplotlib, Snakemake, Kaggle, Scikit-Learn
+
+# DOI
+10.5281/zenodo.15377561

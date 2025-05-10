@@ -1,5 +1,6 @@
 # Title: Cost of International Education Affects on the Happiness of Countries
 # Link to archival record: Link to the archived copy of the project, including persisistent identifiers
+10.5281/zenodo.15377561
 # Contributors: Bulleted list of contributors (optional ORCIDs)
 Ethan Wang: 0009-0004-8157-6614
 # Summary: Description of your project, motivation, research questions, and any findings
